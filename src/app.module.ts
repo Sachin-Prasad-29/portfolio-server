@@ -5,7 +5,6 @@ import { ExperienceModule } from './experience/experience.module';
 import { ProjectModule } from './project/project.module';
 import { SocialsModule } from './socials/socials.module';
 import { TechnologiesModule } from './technologies/technologies.module';
-import { UrlsModule } from './urls/urls.module';
 
 @Module({
   imports: [
@@ -15,7 +14,6 @@ import { UrlsModule } from './urls/urls.module';
     ProjectModule,
     SocialsModule,
     TechnologiesModule,
-    UrlsModule,
   ],
   controllers: [],
   providers: [],

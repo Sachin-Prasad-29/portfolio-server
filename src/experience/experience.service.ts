@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { ExpDto, ExpUpDto } from 'src/dto';
 import { ExperienceDoc } from 'src/schemas/experience.schema';
 
 @Injectable()
@@ -11,22 +12,25 @@ export class ExperienceService {
   ) {}
 
   // Get Service
-  async getExp() {
-    return 'Get Exp';
+  async getExp(): Promise<any> {
+    return await this.Experience.find();
   }
 
   // Add Service
-  async postExp() {
-    return 'Post Exp';
+  async postExp(data: ExpDto): Promise<any> {
+    return await this.Experience.create(data);
   }
 
   // Update Service
-  async updateExp() {
-    return 'Update Exp';
+  async updateExp(id: string, data: ExpUpDto): Promise<any> {
+    return await this.Experience.findByIdAndUpdate(id, data, {
+      new: true,
+      runValidators: true,
+    });
   }
 
   // Delete Service
-  async deleteExp() {
-    return 'Delete Exp';
+  async deleteExp(id: string): Promise<any> {
+    return await this.Experience.findByIdAndDelete(id);
   }
 }
