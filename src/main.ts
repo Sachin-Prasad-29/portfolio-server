@@ -11,8 +11,6 @@ async function bootstrap() {
     }),
   );
   const PORT = process.env.PORT;
-  await app.listen(PORT, () =>
-    console.log(`Running at http://localhost:${PORT}`),
-  );
+  await app.listen(PORT);
 }
 bootstrap();

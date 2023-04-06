@@ -22,25 +22,25 @@ export class SocialsController {
   // Add
   @Post()
   async postSocial(@Body() reqBody: SocialDto) {
-    console.log(reqBody);
+    // console.log(reqBody);
     return this.socialsService.postSocial(reqBody);
   }
 
   // Update
-  @Patch()
+  @Patch(':id')
   async updateSocial(
     @Param() param: { id: string },
     @Body() reqBody: SocialUpDto,
   ) {
-    console.log(param.id);
-    console.log(reqBody);
+    // console.log(param.id);
+    // console.log(reqBody);
     return this.socialsService.updateSocial(param.id, reqBody);
   }
 
   // Delete
-  @Delete()
+  @Delete(':id')
   async deleteSocial(@Param() param: { id: string }) {
-    console.log(param.id);
+    // console.log(param.id);
     return this.socialsService.deleteSocial(param.id);
   }
 }

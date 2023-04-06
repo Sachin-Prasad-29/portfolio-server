@@ -22,7 +22,7 @@ export class ProjectController {
   // Add
   @Post()
   async postProject(@Body() reqBody: ProjectDto) {
-    console.log(reqBody);
+    // console.log(reqBody);
     return this.projectService.postProject(reqBody);
   }
 
@@ -32,15 +32,15 @@ export class ProjectController {
     @Param() param: { id: string },
     @Body() reqBody: ProjectUpDto,
   ) {
-    console.log(param.id);
-    console.log(reqBody);
+    // console.log(param.id);
+    // console.log(reqBody);
     return this.projectService.updateProject(param.id, reqBody);
   }
 
   // Delete
   @Delete(':id')
   async deleteProject(@Param() param: { id: string }) {
-    console.log(param.id);
+    // console.log(param.id);
     return this.projectService.deleteProject(param.id);
   }
 }
