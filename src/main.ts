@@ -10,7 +10,7 @@ async function bootstrap() {
       whitelist: true,
     }),
   );
-  const PORT = process.env.PORT;
+  const PORT = process.env.PORT || 5001;
   await app.listen(PORT);
 }
 bootstrap();
